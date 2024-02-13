@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #222;
+}
+.container .dots {
+  position: absolute;
+  bottom: 70px;
+  z-index: 1000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 6px;
+}
+.container .dots label {
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  cursor: pointer;
+  border-radius: 50%;
+  opacity: 0.5;
+  border: 2px solid #222;
+}
+.container .slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.container .slider .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--img);
+  background-size: cover;
+  -webkit-clip-path: circle(0% at 50% 50%);
+          clip-path: circle(0% at 50% 50%);
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
+  background-position: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+.container .slider .slide:nth-child(even) {
+  -webkit-clip-path: circle(0% at 100% 50%);
+          clip-path: circle(0% at 100% 50%);
+}
+.container .content {
+  position: relative;
+  padding: 50px 50px 120px 80px;
+  max-width: 550px;
+  color: #fff;
+}
+.container .content h2 {
+  font-size: 3em;
+}
+.container input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.container input:nth-child(1):checked ~ .dots label:nth-child(1), .container input:nth-child(2):checked ~ .dots label:nth-child(2), .container input:nth-child(3):checked ~ .dots label:nth-child(3), .container input:nth-child(4):checked ~ .dots label:nth-child(4), .container input:nth-child(5):checked ~ .dots label:nth-child(5) {
+  opacity: 1;
+}
+.container input:nth-child(1):checked ~ .slider .slide:nth-child(1), .container input:nth-child(2):checked ~ .slider .slide:nth-child(2), .container input:nth-child(3):checked ~ .slider .slide:nth-child(3), .container input:nth-child(4):checked ~ .slider .slide:nth-child(4), .container input:nth-child(5):checked ~ .slider .slide:nth-child(5) {
+  -webkit-clip-path: circle(150% at 50% 50%);
+          clip-path: circle(150% at 50% 50%);
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
+  background-position: center;
+}
